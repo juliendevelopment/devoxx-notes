@@ -1,4 +1,4 @@
-site_name: Devoxx Belgium 2026 — talk notes
+site_name: Devoxx notes
 docs_dir: docs
 theme:
   name: material
@@ -6,6 +6,7 @@ theme:
   features:
     - navigation.instant
     - navigation.top
+    - navigation.indexes
     - search.highlight
   palette:
     - media: "(prefers-color-scheme: light)"

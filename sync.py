@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
-"""Copy the processed talk notes from ../talks into docs/ for MkDocs.
+"""Copy the processed talk notes of one Devoxx vault into docs/<year>/ for MkDocs.
 
 Only talk folders (`talks/<Day NN> - <title>/note.md` + `images/`) are
 published; the loose files in talks/ (general note, Slides to get…) are not.
-Run it before committing: `python3 sync.py`.
+Run it before committing: `python3 sync.py [vault] [year]`
+(defaults: the parent folder, year 2026). Other years in docs/ are kept.
 """
 import re
 import shutil
+import sys
 from pathlib import Path
 
 import yaml
 
 ROOT = Path(__file__).resolve().parent
-TALKS = ROOT.parent / "talks"
+VAULT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT.parent
+YEAR = sys.argv[2] if len(sys.argv) > 2 else "2026"
+TALKS = VAULT / "talks"
 DOCS = ROOT / "docs"
+YEAR_DOCS = DOCS / YEAR
 CODE = re.compile(r"^(Mon|Tue|Wed|Thu|Fri) \d\d - ")
-DAYS = {"Mon": "Monday 5 October", "Tue": "Tuesday 6 October",
-        "Wed": "Wednesday 7 October", "Thu": "Thursday 8 October",
-        "Fri": "Friday 9 October"}
+DAYS = {"Mon": "Monday", "Tue": "Tuesday", "Wed": "Wednesday",
+        "Thu": "Thursday", "Fri": "Friday"}
 LIST_ITEM = re.compile(r"^\s*([-*+]|\d+\.)\s")
 
 
@@ -53,16 +57,16 @@ def with_video(body, video):
 
 
 def main():
-    if DOCS.exists():
-        shutil.rmtree(DOCS)
-    DOCS.mkdir()
+    if YEAR_DOCS.exists():
+        shutil.rmtree(YEAR_DOCS)
+    YEAR_DOCS.mkdir(parents=True)
     talks = []
     for folder in sorted(p for p in TALKS.iterdir() if p.is_dir() and CODE.match(p.name)):
         note = folder / "note.md"
         if not note.exists():
             continue
         meta, body = split_frontmatter(note.read_text(encoding="utf-8"))
-        target = DOCS / slug(folder.name)
+        target = YEAR_DOCS / slug(folder.name)
         target.mkdir()
         page = "---\n" + yaml.safe_dump({"title": f"{folder.name[:6]} · {meta.get('title', folder.name)}"},
                                         allow_unicode=True) + "---\n\n"
@@ -71,7 +75,7 @@ def main():
             shutil.copytree(folder / "images", target / "images")
         talks.append((folder.name, target.name, meta))
 
-    lines = ["# Devoxx Belgium 2026 — talk notes", "",
+    lines = [f"# Devoxx Belgium {YEAR}", "",
              "Notes de Julien, prises pendant les talks (verbatim).", ""]
     day = None
     for name, path, meta in talks:
@@ -82,8 +86,13 @@ def main():
         video = " · ▶" if meta.get("video") else ""
         lines.append(f"- **{meta.get('slot', '')[:5]}** [{meta.get('title', name)}]({path}/index.md)  ")
         lines.append(f"  {speakers} · {meta.get('format', '')}{video}")
-    (DOCS / "index.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"{len(talks)} talks synced into {DOCS}")
+    (YEAR_DOCS / "index.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    years = sorted((p.name for p in DOCS.iterdir() if p.is_dir() and p.name.isdigit()), reverse=True)
+    home = ["# Devoxx notes", "", "Notes de talks prises à Devoxx Belgium, une page par talk.", ""]
+    home += [f"- [Devoxx Belgium {y}]({y}/index.md)" for y in years]
+    (DOCS / "index.md").write_text("\n".join(home) + "\n", encoding="utf-8")
+    print(f"{len(talks)} talks synced into {YEAR_DOCS}")
 
 
 if __name__ == "__main__":
