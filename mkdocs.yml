@@ -1,0 +1,27 @@
+site_name: Devoxx Belgium 2026 — talk notes
+docs_dir: docs
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.top
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      toggle: { icon: material/weather-sunny, name: Light mode }
+plugins:
+  - search
+markdown_extensions:
+  - nl2br              # Obsidian: a single newline is a line break
+  - mdx_truly_sane_lists  # Obsidian: 2-space nested lists
+  - attr_list
+  - toc:
+      permalink: true
+site_dir: site_build
