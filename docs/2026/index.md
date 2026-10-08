@@ -29,10 +29,26 @@ Notes de Julien, prises pendant les talks (verbatim).
 - **09:30** [Wednesday Keynotes](wed-01-keynotes/index.md)  
   Stephan Janssen, Jan Van Wassenhove, Prince Canuma, Jean-Laurent de Morlhon, Ron Pressler, Victor Rentea · Keynote
 - **12:00** [MCP 2.0 - Stateless, New Auth (CIMD), and Exciting Extensions](wed-02-mcp-2-0/index.md)  
-  James Ward · Conference
+  James Ward · Conference · ▶
 - **14:00** [Harness Engineering: Building the System Around Your AI Coding Agent](wed-03-harness-engineering/index.md)  
-  JI Darwish · Conference
+  JI Darwish · Conference · ▶
 - **15:10** [How to survive and thrive as a dev (team) in the exponential age of AI. Real-world AI adoption, smarter ways of working, and lessons from the front lines](wed-04-how-to-survive-and-thrive-as-a-dev/index.md)  
-  Sander Hoogendoorn · Conference
+  Sander Hoogendoorn · Conference · ▶
 - **16:40** [Architecture Observability and Guardrails](wed-05-architecture-observability-and-guardrails/index.md)  
-  Victor Rentea · Conference
+  Victor Rentea · Conference · ▶
+## Thursday
+
+- **09:30** [From vibe coding to harness engineering: modernizing a regulated environment with AI](thu-01-from-vibe-coding-to-harness-engineering/index.md)  
+  Anyul Rivas · Conference
+- **10:40** [Coder, Coach, Catalyst - using questions to make people grow](thu-02-coder-coach-catalyst/index.md)  
+  Martin Mazur · Conference
+- **11:50** [The Rise of Agent Enablement: Coding Agents Don't Scale Themselves. Neither Do Your Teams.](thu-03-the-rise-of-agent-enablement/index.md)  
+  Patrick Debois · Conference
+- **13:50** [The Hexagonal Hangover](thu-04-the-hexagonal-hangover/index.md)  
+  Ties van de Ven · Conference
+- **15:00** [Build a private cluster for the office](thu-05-build-a-private-cluster-for-the-office/index.md)  
+  John Davies · Conference
+- **16:30** [ADRs: The Why and How](thu-06-adrs-the-why-and-how/index.md)  
+  Venkat Subramaniam · Conference
+- **18:55** [F*ck The System, and other bad ideas for the future](thu-07-closing-keynote-f-ck-the-system/index.md)  
+  Jo Caudron · Closing Keynote

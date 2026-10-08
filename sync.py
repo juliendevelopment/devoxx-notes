@@ -61,7 +61,10 @@ def main():
         shutil.rmtree(YEAR_DOCS)
     YEAR_DOCS.mkdir(parents=True)
     talks = []
-    for folder in sorted(p for p in TALKS.iterdir() if p.is_dir() and CODE.match(p.name)):
+    for folder in sorted(
+        (p for p in TALKS.iterdir() if p.is_dir() and CODE.match(p.name)),
+        key=lambda p: (list(DAYS).index(p.name[:3]), p.name),
+    ):
         note = folder / "note.md"
         if not note.exists():
             continue

@@ -7,12 +7,12 @@ title: Wed 01 · Wednesday Keynotes
 
 Room 8 · Keynote · 09:30-11:30
 
-- [Welcome to Devoxx](https://m.devoxx.com/events/dvbe26/talks/31451/welcome-to-devoxx) by [Stephan Janssen](https://m.devoxx.com/events/dvbe26/speaker/30503/stephan-janssen) · 09:30
-- [From Brainless to Brilliant — Giving an Open-Source Robot a Mind of Its Own](https://m.devoxx.com/events/dvbe26/talks/50102/from-brainless-to-brilliant-giving-an-open-source-robot-a-mind-of-its-own) by [Jan Van Wassenhove](https://m.devoxx.com/events/dvbe26/speaker/7632/jan-van-wassenhove) · 09:50
-- [Half of a billion Idle GPUs: The Case for On-Device AI](https://m.devoxx.com/events/dvbe26/talks/31455/half-of-a-billion-idle-gpus-the-case-for-on-device-ai) by [Prince Canuma](https://m.devoxx.com/events/dvbe26/speaker/16387/prince-canuma) · 10:10
-- [A Fleet of AI Agents, Each in Its Own Sandbox: Inside Docker's Agentic Platform](https://m.devoxx.com/events/dvbe26/talks/48301/a-fleet-of-ai-agents-each-in-its-own-sandbox-inside-docker-s-agentic-platform) by [Jean-Laurent de Morlhon](https://m.devoxx.com/events/dvbe26/speaker/47852/jean-laurent-de-morlhon) · 10:30
-- [The Year of the Runtime](https://m.devoxx.com/events/dvbe26/talks/49251/the-year-of-the-runtime) by [Ron Pressler](https://m.devoxx.com/events/dvbe26/speaker/49102/ron-pressler) · 10:50
-- [Agentic Engineering Reconversion](https://m.devoxx.com/events/dvbe26/talks/51951/agentic-engineering-reconversion) by [Victor Rentea](https://m.devoxx.com/events/dvbe26/speaker/30506/victor-rentea) · 11:10
+- [Welcome to Devoxx](https://m.devoxx.com/events/dvbe26/talks/31451/welcome-to-devoxx) by [Stephan Janssen](https://m.devoxx.com/events/dvbe26/speaker/30503/stephan-janssen) · 09:30 · [video](https://youtu.be/aup9tNzQu7c)
+- [From Brainless to Brilliant — Giving an Open-Source Robot a Mind of Its Own](https://m.devoxx.com/events/dvbe26/talks/50102/from-brainless-to-brilliant-giving-an-open-source-robot-a-mind-of-its-own) by [Jan Van Wassenhove](https://m.devoxx.com/events/dvbe26/speaker/7632/jan-van-wassenhove) · 09:50 · [video](https://youtu.be/ZDocIlx7Zvg)
+- [Half of a billion Idle GPUs: The Case for On-Device AI](https://m.devoxx.com/events/dvbe26/talks/31455/half-of-a-billion-idle-gpus-the-case-for-on-device-ai) by [Prince Canuma](https://m.devoxx.com/events/dvbe26/speaker/16387/prince-canuma) · 10:10 · [video](https://youtu.be/qFTuteOEtsE)
+- [A Fleet of AI Agents, Each in Its Own Sandbox: Inside Docker's Agentic Platform](https://m.devoxx.com/events/dvbe26/talks/48301/a-fleet-of-ai-agents-each-in-its-own-sandbox-inside-docker-s-agentic-platform) by [Jean-Laurent de Morlhon](https://m.devoxx.com/events/dvbe26/speaker/47852/jean-laurent-de-morlhon) · 10:30 · [video](https://youtu.be/mnoUXIT4nMY)
+- [The Year of the Runtime](https://m.devoxx.com/events/dvbe26/talks/49251/the-year-of-the-runtime) by [Ron Pressler](https://m.devoxx.com/events/dvbe26/speaker/49102/ron-pressler) · 10:50 · [video](https://youtu.be/tle2mA7EwWU)
+- [Agentic Engineering Reconversion](https://m.devoxx.com/events/dvbe26/talks/51951/agentic-engineering-reconversion) by [Victor Rentea](https://m.devoxx.com/events/dvbe26/speaker/30506/victor-rentea) · 11:10 · [video](https://youtu.be/vAfQ4f8wIVI)
 
 ## Summary
 

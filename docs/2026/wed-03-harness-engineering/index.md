@@ -5,6 +5,9 @@ title: 'Wed 03 · Harness Engineering: Building the System Around Your AI Coding
 
 # 14:00 Harness engeneering
 
+[▶ Video](https://youtu.be/6N6qFqn1_Uo)
+
+
 [Harness Engineering: Building the System Around Your AI Coding Agent](https://m.devoxx.com/events/dvbe26/talks/4087/harness-engineering-building-the-system-around-your-ai-coding-agent) by [JI Darwish](https://m.devoxx.com/events/dvbe26/speaker/46151/ji-darwish)
 Room 5 · Conference · 14:00-14:50
 
@@ -14,58 +17,58 @@ AI coding agents are fundamentally simple: prompt a model, execute tool calls, f
 
 ## Timeline
 
-### 03:00
+### [03:00](https://youtu.be/6N6qFqn1_Uo?t=180)
 - Rebuilt something existing to learn
 - ⚠ maintability is the hard point
 
 ![](images/04m02.jpg)
 
-### 05:00
+### [05:00](https://youtu.be/6N6qFqn1_Uo?t=300)
 - gartner 40% Back Becouse un maintainable
 - Agent = model + Harness
 - Harness-engenering martin fowler
 
 ![](images/07m03.jpg)
 
-### 09:41
+### [09:41](https://youtu.be/6N6qFqn1_Uo?t=581)
 ![](images/09m41.jpg)
 
 ![](images/11m01.jpg)
 
-### 13:00
+### [13:00](https://youtu.be/6N6qFqn1_Uo?t=780)
 - he speek about Budget and take core of it
 
-### 14:00
+### [14:00](https://youtu.be/6N6qFqn1_Uo?t=840)
 - Boeckeler's a women
 - 1- lint ? (java)
 
-### 17:41
+### [17:41](https://youtu.be/6N6qFqn1_Uo?t=1061)
 ![](images/17m41.jpg)
 
-### 23:50
+### [23:50](https://youtu.be/6N6qFqn1_Uo?t=1430)
 ![](images/23m50.jpg)
 
-### 28:00
+### [28:00](https://youtu.be/6N6qFqn1_Uo?t=1680)
 - lint
 
 ![](images/28m48.jpg)
 
 ![](images/29m52.jpg)
 
-### 31:00
+### [31:00](https://youtu.be/6N6qFqn1_Uo?t=1860)
 - MC [?] Bring lib for Angular
 - lot about java test and Deterministic tool But not about hardness [?] until now
 
 ![](images/31m57.jpg)
 
-### 35:16
+### [35:16](https://youtu.be/6N6qFqn1_Uo?t=2116)
 ![](images/35m16.jpg)
 
 ![](images/37m27.jpg)
 
-### 38:00
+### [38:00](https://youtu.be/6N6qFqn1_Uo?t=2280)
 
-### 49:46
+### [49:46](https://youtu.be/6N6qFqn1_Uo?t=2986)
 - workshops https://github.com/JiDarwish/outer-harness-workshop
 
 ![](images/49m46.jpg)
