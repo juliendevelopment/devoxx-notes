@@ -1,2 +1,3 @@
-site_build/
-.venv/
+node_modules/
+dist/
+.astro/

@@ -1,0 +1,422 @@
+/* Devoxx orange + neon on a dark night background. Dark is Starlight's base theme,
+   light overrides follow. This file is unlayered, so it beats Starlight's own
+   theme: dark-only values must not leak into the light theme. */
+
+:root {
+  --sl-font: 'Inter Variable', system-ui, sans-serif;
+  --font-display: 'Space Grotesk Variable', var(--sl-font);
+
+  --neon-1: #ff7a18;
+  --neon-2: #ff2d95;
+  --neon-3: #8b5cf6;
+  --neon-gradient: linear-gradient(110deg, var(--neon-1), var(--neon-2) 50%, var(--neon-3));
+}
+
+:root:not([data-theme='light']) {
+  --sl-color-accent-low: #3a1408;
+  --sl-color-accent: #ff7a18;
+  --sl-color-accent-high: #ffd2b0;
+  --sl-color-black: #0c0814;
+  --sl-color-gray-7: #140e1f;
+  --sl-color-gray-6: #231a33;
+  --sl-color-gray-5: #3b3050;
+
+  --card-bg: color-mix(in srgb, var(--sl-color-gray-6) 70%, transparent);
+  --card-border: color-mix(in srgb, var(--sl-color-white) 10%, transparent);
+  --glow: 0 0 0 1px color-mix(in srgb, var(--neon-2) 55%, transparent),
+    0 10px 40px -10px color-mix(in srgb, var(--neon-2) 55%, transparent);
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #ffe4d1;
+  --sl-color-accent: #d9480f;
+  --sl-color-accent-high: #7a2604;
+  --sl-color-white: #170f22;
+  --sl-color-gray-1: #2a2238;
+  --sl-color-gray-7: #f6f1fb;
+  --sl-color-black: #fffbf7;
+  --card-bg: #ffffff;
+  --card-border: color-mix(in srgb, #2a2238 12%, transparent);
+  --glow: 0 0 0 1px color-mix(in srgb, var(--neon-2) 45%, transparent),
+    0 12px 32px -12px color-mix(in srgb, var(--neon-2) 45%, transparent);
+}
+
+body {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, color-mix(in srgb, var(--neon-2) 16%, transparent), transparent 70%),
+    radial-gradient(50rem 30rem at -10% 10%, color-mix(in srgb, var(--neon-1) 14%, transparent), transparent 70%),
+    var(--sl-color-black);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, .site-title {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* ---- Hero ------------------------------------------------------------- */
+
+.hero {
+  padding-block: 3rem 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 9vw, 5rem);
+  line-height: 1;
+  background: var(--neon-gradient);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+  filter: drop-shadow(0 0 24px color-mix(in srgb, var(--neon-2) 35%, transparent));
+}
+
+.hero .tagline {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: var(--sl-color-gray-2);
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+/* ---- Stats strip ------------------------------------------------------ */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 0.75rem;
+  margin-block: 0 2.5rem;
+}
+
+.stat {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+}
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  background: var(--neon-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat__label {
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+}
+
+/* ---- Content ---------------------------------------------------------- */
+
+.sl-markdown-content h2 {
+  position: relative;
+  padding-bottom: 0.35rem;
+}
+
+.sl-markdown-content h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--neon-gradient);
+}
+
+.sl-markdown-content blockquote {
+  border-inline-start: 3px solid transparent;
+  border-image: var(--neon-gradient) 1;
+  background: color-mix(in srgb, var(--neon-1) 7%, transparent);
+  padding: 0.75rem 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.sl-markdown-content img {
+  border-radius: 0.75rem;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 0.6);
+}
+
+.sl-markdown-content table {
+  display: block;
+  overflow-x: auto;
+}
+
+/* ---- Buttons & badges ------------------------------------------------- */
+
+.video-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: var(--neon-gradient);
+  background-size: 200% auto;
+  color: #fff !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  box-shadow: 0 6px 20px -8px var(--neon-2);
+  transition: background-position 0.4s, transform 0.2s;
+}
+
+.video-button:hover {
+  background-position: right center;
+  transform: translateY(-1px);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  font-size: var(--sl-text-xs);
+  font-weight: 600;
+  border: 1px solid var(--card-border);
+  color: var(--sl-color-gray-2);
+}
+
+.badge--video {
+  color: var(--neon-1);
+  border-color: color-mix(in srgb, var(--neon-1) 50%, transparent);
+}
+
+.badge--top {
+  color: #fff;
+  border: none;
+  background: var(--neon-gradient);
+}
+
+/* ---- Cards (shared) --------------------------------------------------- */
+
+.talk-grid,
+.missed-grid,
+.top-grid {
+  display: grid;
+  gap: 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.talk-grid,
+.missed-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+}
+
+.talk-card,
+.missed-talk,
+.top-talk {
+  position: relative;
+  margin: 0 !important;
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.talk-card:hover,
+.missed-talk:hover,
+.top-talk:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glow);
+  border-color: transparent;
+}
+
+/* ---- Talk cards (my notes) -------------------------------------------- */
+
+.talk-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.talk-card.is-top {
+  border-color: color-mix(in srgb, var(--neon-2) 45%, transparent);
+}
+
+.talk-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: var(--sl-text-xs);
+  color: var(--sl-color-gray-3);
+}
+
+.talk-card__code {
+  font-weight: 700;
+  color: var(--sl-color-accent);
+}
+
+.talk-card__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--sl-text-lg);
+  line-height: 1.25;
+  color: var(--sl-color-white);
+}
+
+.talk-card__speakers {
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-2);
+}
+
+.talk-card__badges {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.3rem;
+}
+
+/* ---- Top talks (home) ------------------------------------------------- */
+
+.top-talk {
+  display: flex;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  overflow: hidden;
+}
+
+.top-talk__rank {
+  flex: none;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  width: 2.2rem;
+  background: var(--neon-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.top-talk__body > * {
+  margin: 0 !important;
+}
+
+.top-talk__code {
+  font-size: var(--sl-text-xs);
+  color: var(--sl-color-gray-3);
+}
+
+.top-talk__title {
+  font-size: var(--sl-text-xl) !important;
+  line-height: 1.25;
+  padding: 0 !important;
+}
+
+.top-talk__title::after {
+  display: none;
+}
+
+.top-talk__title a {
+  color: var(--sl-color-white);
+  text-decoration: none;
+}
+
+.top-talk__why {
+  margin-top: 0.35rem !important;
+  color: var(--sl-color-gray-2);
+}
+
+.top-talk__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem !important;
+}
+
+.top-talk__notes {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---- Missed talks ----------------------------------------------------- */
+
+.missed-talk {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: 1rem 1.1rem;
+}
+
+.missed-talk > * {
+  margin: 0 !important;
+}
+
+.missed-talk__when,
+.missed-talk__speakers {
+  font-size: var(--sl-text-xs);
+  color: var(--sl-color-gray-3);
+}
+
+.missed-talk__title {
+  font-size: var(--sl-text-lg) !important;
+  line-height: 1.25;
+  padding: 0 !important;
+}
+
+.missed-talk__title::after {
+  display: none;
+}
+
+.missed-talk__title a {
+  color: var(--sl-color-white);
+  text-decoration: none;
+}
+
+.missed-talk__summary {
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-2);
+  flex: 1;
+}
+
+details.out-of-scope {
+  border: 1px dashed var(--card-border);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+details.out-of-scope summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--sl-color-accent);
+}
+
+/* ---- Raw-note banner -------------------------------------------------- */
+
+.sl-banner {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--neon-1) 85%, black), color-mix(in srgb, var(--neon-2) 85%, black));
+  color: #fff;
+  font-size: var(--sl-text-sm);
+}
+
+.sl-banner a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.sl-steps > li::before {
+  background: var(--neon-gradient) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 { animation: none; }
+  .talk-card, .missed-talk, .top-talk { transition: none; }
+}

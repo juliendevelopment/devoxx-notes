@@ -1,0 +1,28 @@
+---
+import { href } from './link';
+
+interface Props {
+  href: string;
+  code: string;
+  slot: string;
+  title: string;
+  speakers: string;
+  format: string;
+  video: boolean;
+  rank?: number | null;
+}
+const { code, slot, title, speakers, format, video, rank } = Astro.props;
+---
+<a class:list={['talk-card', { 'is-top': rank }]} href={href(Astro.props.href)}>
+  <span class="talk-card__meta">
+    <span class="talk-card__code">{code}</span>
+    {slot && <span>{slot}</span>}
+    {format && <span>· {format}</span>}
+  </span>
+  <span class="talk-card__title">{title}</span>
+  <span class="talk-card__speakers">{speakers}</span>
+  <span class="talk-card__badges">
+    {rank && <span class="badge badge--top">⭐ Top {rank}</span>}
+    {video && <span class="badge badge--video">▶ Video</span>}
+  </span>
+</a>

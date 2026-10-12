@@ -1,0 +1,10 @@
+# English translation of the French passages of talks/Mon 06 - One tool to rule them all/note.md.
+# sync.py replaces each `fr` block (exact text) by its `en` block.
+- fr: '2. [One tool to rule them all: bash, a tiny LLM, and the birth of a coding agent](https://m.devoxx.com/events/dvbe26/talks/22911/one-tool-to-rule-them-all-bash-a-tiny-llm-and-the-birth-of-a-coding-agent) de [Philippe Charrière](https://m.devoxx.com/events/dvbe26/speaker/18086/philippe-charri-re)'
+  en: '2. [One tool to rule them all: bash, a tiny LLM, and the birth of a coding agent](https://m.devoxx.com/events/dvbe26/talks/22911/one-tool-to-rule-them-all-bash-a-tiny-llm-and-the-birth-of-a-coding-agent) by [Philippe Charrière](https://m.devoxx.com/events/dvbe26/speaker/18086/philippe-charri-re)'
+- fr: '   Room 5 · Tools-in-Action · 96 favoris'
+  en: '   Room 5 · Tools-in-Action · 96 favourites'
+- fr: '   Il démonte un agent de code (bash et un petit LLM). Ça donne des exemples concrets pour expliquer aux équipes comment un agent fonctionne.'
+  en: '   He takes apart a coding agent (bash and a small LLM). It gives concrete examples to explain to teams how an agent works.'
+- fr: j'ai pas su le voir, à revoir
+  en: I couldn't watch it, to rewatch

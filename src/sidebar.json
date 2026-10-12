@@ -1,0 +1,145 @@
+[
+  {
+    "label": "Devoxx Belgium 2026",
+    "items": [
+      {
+        "label": "Start here",
+        "link": "/"
+      },
+      {
+        "slug": "2026/talks-i-didnt-see"
+      },
+      {
+        "label": "My raw notes",
+        "items": [
+          {
+            "slug": "2026/notes",
+            "label": "All talks"
+          },
+          {
+            "label": "Monday",
+            "collapsed": true,
+            "items": [
+              {
+                "slug": "2026/notes/mon-01-from-autocomplete-to-autopilot",
+                "label": "From Autocomplete to Autopilot"
+              },
+              {
+                "slug": "2026/notes/mon-02-java-lego-and-ai",
+                "label": "Java LEGO and AI"
+              },
+              {
+                "slug": "2026/notes/mon-03-from-developer-to-builder",
+                "label": "From Developer to Builder"
+              },
+              {
+                "slug": "2026/notes/mon-04-secure-your-coding-agent",
+                "label": "Secure Your Coding Agent"
+              },
+              {
+                "slug": "2026/notes/mon-05-stopping-ai-generated-architectural-drift",
+                "label": "Stopping AI-Generated Architectural Drift"
+              },
+              {
+                "slug": "2026/notes/mon-06-one-tool-to-rule-them-all",
+                "label": "One tool to rule them all"
+              }
+            ]
+          },
+          {
+            "label": "Tuesday",
+            "collapsed": true,
+            "items": [
+              {
+                "slug": "2026/notes/tue-01-loop-engineering",
+                "label": "Loop Engineering"
+              },
+              {
+                "slug": "2026/notes/tue-02-measuring-the-unmeasurable",
+                "label": "Measuring the Unmeasurable"
+              },
+              {
+                "slug": "2026/notes/tue-03-responsibly-dimming-the-lights",
+                "label": "Responsibly Dimming the Lights"
+              }
+            ]
+          },
+          {
+            "label": "Wednesday",
+            "collapsed": true,
+            "items": [
+              {
+                "slug": "2026/notes/wed-01-keynotes",
+                "label": "Keynotes"
+              },
+              {
+                "slug": "2026/notes/wed-02-mcp-2-0",
+                "label": "MCP 2.0"
+              },
+              {
+                "slug": "2026/notes/wed-03-harness-engineering",
+                "label": "Harness Engineering"
+              },
+              {
+                "slug": "2026/notes/wed-04-how-to-survive-and-thrive-as-a-dev",
+                "label": "How to survive and thrive as a dev"
+              },
+              {
+                "slug": "2026/notes/wed-05-architecture-observability-and-guardrails",
+                "label": "Architecture Observability and Guardrails"
+              }
+            ]
+          },
+          {
+            "label": "Thursday",
+            "collapsed": true,
+            "items": [
+              {
+                "slug": "2026/notes/thu-01-from-vibe-coding-to-harness-engineering",
+                "label": "From Vibe Coding to Harness Engineering"
+              },
+              {
+                "slug": "2026/notes/thu-02-coder-coach-catalyst",
+                "label": "Coder, Coach, Catalyst"
+              },
+              {
+                "slug": "2026/notes/thu-03-the-rise-of-agent-enablement",
+                "label": "The Rise of Agent Enablement"
+              },
+              {
+                "slug": "2026/notes/thu-04-the-hexagonal-hangover",
+                "label": "The Hexagonal Hangover"
+              },
+              {
+                "slug": "2026/notes/thu-05-build-a-private-cluster-for-the-office",
+                "label": "Build a Private Cluster for the Office"
+              },
+              {
+                "slug": "2026/notes/thu-06-adrs-the-why-and-how",
+                "label": "ADRs, The Why and How"
+              },
+              {
+                "slug": "2026/notes/thu-07-closing-keynote-f-ck-the-system",
+                "label": "Closing Keynote, F_ck The System"
+              }
+            ]
+          },
+          {
+            "label": "Friday",
+            "collapsed": true,
+            "items": [
+              {
+                "slug": "2026/notes/fri-01-in-the-loop-not-in-the-dark",
+                "label": "In the loop, not in the dark"
+              },
+              {
+                "slug": "2026/notes/fri-02-is-ai-killing-xp-practices",
+                "label": "Is AI killing XP practices"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

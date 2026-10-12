@@ -1,0 +1,133 @@
+---
+title: What I bring back from Devoxx Belgium 2026
+description: Five days in Antwerp, 23 talks, one question — how do we adopt AI coding agents for real?
+template: splash
+hero:
+  title: Devoxx Belgium 2026
+  tagline: Five days in Antwerp, 23 talks, one question — how do we adopt AI coding agents for real?
+  actions:
+  - text: Talks to share
+    link: '#talks-to-share'
+    icon: star
+    variant: primary
+  - text: My raw notes
+    link: /devoxx-notes/2026/notes/
+    icon: open-book
+    variant: secondary
+  - text: Talks I didn't see
+    link: /devoxx-notes/2026/talks-i-didnt-see/
+    icon: right-arrow
+    variant: minimal
+---
+
+
+import { Steps } from '@astrojs/starlight/components';
+import Stats from '../../components/Stats.astro';
+import TopTalk from '../../components/TopTalk.astro';
+
+<Stats items={[{"value": 23, "label": "talks noted"}, {"value": 21, "label": "with video"}, {"value": 7, "label": "to share"}, {"value": 63, "label": "missed, to watch"}]} />
+
+
+> **My view, as of 12 October 2026.** These are my personal takeaways, not a report. Some of it may be wrong, and some of it will age fast: I will update it.
+
+## How to read this site
+
+<Steps>
+
+1. **Start here.** This page is the short version: the trends, what I take away and the talks worth your time.
+2. **Go deeper with the videos.** Every talk I recommend has its recording on YouTube.
+3. **My raw notes** are the notes I typed or wrote during each talk. Use them to jump to the right minute of a video.
+4. **Talks I didn't see** lists the talks I wanted to attend but could not, grouped by theme.
+
+</Steps>
+
+## The big trends
+
+### The industry talks about software *factories* now
+
+Agentic, automated development moved forward a lot this year. Speakers now talk about **factories**: light factory, grey factory, dark factory — how much of the work runs without a human watching. Even well-known developers say they have not written a line of code by hand for six months.
+
+Background reading: [The five levels, from spicy autocomplete to the software factory](https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/) (Dan Shapiro).
+
+### Developers are losing part of their identity…
+
+…but the shift goes towards the **functional side**: less pure technique, more of the product and the business. In my view, that brings us closer to the people we build for.
+
+### No revolution this year
+
+There is a certain lack of novelty: no big new concept appeared. Models are stronger and people sharpen their tools, but nothing changed at the technical level.
+
+### Agentic features inside applications
+
+Adding agents *inside* our applications is a big trend too. Nothing very new for me either, but it keeps growing. An open question for us: at what point should development be involved in this?
+
+## Invest in your harness
+
+The harness is everything around the agent that helps it do correct work: **documentation, tests, skills, rules, feedback loops**. Improving it is the big trend of the week, and I think this is the way we must go.
+
+> Invest in your harness — your results will thank you.
+
+Own your harness: write your own skills instead of only consuming other people's.
+
+## My takeaways
+
+- **People don't write code anymore.** The job moves to specifying, steering and reviewing.
+- **Vibe coding is for pet projects.** Building something production-ready needs a harness.
+- **Review is about risk.** Review means identifying the risks and looking at what really matters, not reading every line.
+- **LLM as a judge** is a tool to keep in the box.
+- **Open question:** are loops really a thing if you already have a good harness?
+
+## Pitfalls
+
+- **Humanizing AI doesn't work.** Trying to reproduce human behaviour with persona agents ("the architect", "the PM"…) does not work — don't copy human processes onto agents.
+
+## Tools & tips
+
+### MCP
+
+- **Java MCP** (javadocs.dev): gives the agent the Javadoc and sources of your dependencies, so it stops unzipping JARs. Endpoint: `https://www.javadocs.dev/mcp`
+
+### Skills
+
+- **`/grill-me`** and **`/grill-me-with-doc`** from Matt Pocock: the agent interviews you until the plan is clear. [Setup guide](https://www.aihero.dev/skills-setup-matt-pocock-skills)
+
+### Commands
+
+- **`/goal`**: let the agent loop until a goal is reached.
+
+### Tools
+
+- **[RTK](https://www.rtk-ai.app/)**: cuts the tokens a coding agent spends on command output.
+
+### Spec-Driven Development frameworks
+
+Pick one framework and use it. Above all, change it to fit what you want to do: take ideas from it, modify it and make it your own.
+
+- **OpenSpec**: change proposals on top of living specs. Designed for brownfield and changes to existing code. [openspec.dev](https://openspec.dev)
+- **GitHub Spec Kit**: step-by-step flow (constitution, specify, plan, tasks, implement). [github.com/github/spec-kit](https://github.com/github/spec-kit)
+- **Kiro (AWS)**: spec-centric IDE, a VS Code fork by Amazon. [kiro.dev](https://kiro.dev)
+- **BMAD**: a team of agent personas (analyst, PM, architect, dev). Produces a lot of .md. [docs.bmad-method.org](https://docs.bmad-method.org)
+- **AI Unified Process**: built on use cases, aimed at enterprise, brownfield, long-lived systems. [unifiedprocess.ai](https://unifiedprocess.ai)
+- **Tessl**: a skills registry for sharing versioned specs and skills. [tessl.io](https://tessl.io)
+- **Matt Pocock's skills**: pragmatic, hand-crafted skills (grill-me, to-prd, wayfinder…). [github.com/mattpocock/skills](https://github.com/mattpocock/skills)
+- **Superpowers**: brainstorming, multi-agent and adversarial review. [github.com/obra/superpowers](https://github.com/obra/superpowers)
+- **GSD (Get Shit Done)**: a phase loop with each phase run in fresh-context subagents. [github.com/open-gsd/gsd-core](https://github.com/open-gsd/gsd-core)
+
+## Talks to share
+
+If you watch only a few recordings, watch these — in this order.
+
+<div class="top-grid">
+<TopTalk {...{"href": "2026/notes/tue-03-responsibly-dimming-the-lights", "code": "Tue 03", "slot": "13:30", "title": "Responsibly Dimming the Lights in the Software Factory", "speakers": "Victor Rentea", "format": "Deep Dive", "video": true, "rank": 1, "why": "A maturity path to lighten the review of AI-generated code area by area, without cognitive debt or skill loss.", "videoUrl": "https://youtu.be/C10mZ3pCnGo"}} />
+<TopTalk {...{"href": "2026/notes/thu-03-the-rise-of-agent-enablement", "code": "Thu 03", "slot": "11:50", "title": "The Rise of Agent Enablement", "speakers": "Patrick Debois", "format": "Conference", "video": true, "rank": 2, "why": "Scaling coding agents is organisational: agent, team, platform and organisation layers. Review is about risk.", "videoUrl": "https://youtu.be/wxNQRGPnJ24"}} />
+<TopTalk {...{"href": "2026/notes/thu-01-from-vibe-coding-to-harness-engineering", "code": "Thu 01", "slot": "09:30", "title": "From Vibe Coding to Harness Engineering", "speakers": "Anyul Rivas", "format": "Conference", "video": true, "rank": 3, "why": "Field report from a regulated bank: the quota blow-up, vibe coding for the demo, a harness for production, a harness scorecard.", "videoUrl": "https://youtu.be/zEUSFvDOiCo"}} />
+<TopTalk {...{"href": "2026/notes/tue-01-loop-engineering", "code": "Tue 01", "slot": "09:30", "title": "Loop Engineering", "speakers": "Guillaume Laforge & Wietse Venema", "format": "Deep Dive", "video": true, "rank": 4, "why": "`/goal`, loops, the Ralph loop, and when to use OpenRewrite vs a headless CLI vs an SDK.", "videoUrl": "https://youtu.be/A7ZIf8LkSvE"}} />
+<TopTalk {...{"href": "2026/notes/mon-03-from-developer-to-builder", "code": "Mon 03", "slot": "13:30", "title": "From Developer to Builder", "speakers": "Simon Martinelli", "format": "Deep Dive", "video": true, "rank": 5, "why": "Spec-driven development with the AI Unified Process; turn guidelines into guardrails.", "videoUrl": "https://youtu.be/z8lal-Yt_04"}} />
+<TopTalk {...{"href": "2026/notes/mon-01-from-autocomplete-to-autopilot", "code": "Mon 01", "slot": "09:30", "title": "From Autocomplete to Autopilot", "speakers": "Tugdual Grall", "format": "Deep Dive", "video": true, "rank": 6, "why": "Copilot in practice: cost per user, hooks, and benchmarking your setup on every new model.", "videoUrl": "https://youtu.be/pMv_39iSXVA"}} />
+<TopTalk {...{"href": "2026/notes/wed-04-how-to-survive-and-thrive-as-a-dev", "code": "Wed 04", "slot": "15:10", "title": "How to survive and thrive as a dev (team)", "speakers": "Sander Hoogendoorn", "format": "Conference", "video": true, "rank": 7, "why": "Real adoption at iBOOD: micro-teams, foundations first, team knowledge turned into skills.", "videoUrl": "https://youtu.be/BLBwQpczk7M"}} />
+</div>
+
+## Go further
+
+- **[Talks I didn't see](/devoxx-notes/2026/talks-i-didnt-see/)** — the talks I wanted to attend, grouped by theme, with their videos.
+- **[My raw notes](/devoxx-notes/2026/notes/)** — everything I noted during the talks, day by day.

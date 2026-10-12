@@ -1,0 +1,4 @@
+# English translation of the French passages of talks/Thu 03 - The Rise of Agent Enablement/note.md.
+# sync.py replaces each `fr` block (exact text) by its `en` block.
+- fr: '- Human So habitué à remove //'
+  en: '- Human So used to remove //'

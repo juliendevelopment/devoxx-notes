@@ -1,0 +1,104 @@
+# English translation of the French passages of talks/Tue 01 - Loop Engineering/note.md.
+# sync.py replaces each `fr` block (exact text) by its `en` block.
+- fr: 'Comparatif rapide des commandes de boucle dans les trois outils (état octobre 2026) :'
+  en: 'Quick comparison of the loop commands in the three tools (as of October 2026):'
+- fr: |-
+    | **Boucle « jusqu'au but »**     | `/goal <objectif>`                                                        | `/goal <objectif>`                                         | `/goal <condition>`                                                 |
+    | **Disponible depuis**           | v0.128.0 (fin avril 2026)                                                 | Antigravity 2.0 (IDE, app desktop, CLI `agy`)              | v2.1.139 (11 mai 2026)                                              |
+    | **Qui décide que c'est fini**   | L'agent lui-même, via des prompts de continuation injectés en fin de tour | L'agent, dans sa boucle plan → exécute → vérifie → corrige | Un modèle évaluateur séparé (Haiku), via un Stop hook               |
+    | **Garde-fou**                   | Budget de tokens configurable                                             | Commande de build/test en dernière ligne du prompt         | « …or stop after N turns », 1 goal par session, 4000 caractères max |
+    | **Boucle périodique**           | — (via plugins/scripts externes)                                          | `/schedule`                                                | `/loop <intervalle> <prompt>`                                       |
+    | **Préparation avant la boucle** | `GOAL.md` + `AGENTS.md` (convention communautaire)                        | `/grill-me` pour figer la spec                             | `/plan` puis `/goal`                                                |
+  en: |-
+    | **"Until the goal" loop**       | `/goal <objective>`                                                       | `/goal <objective>`                                        | `/goal <condition>`                                                 |
+    | **Available since**             | v0.128.0 (end of April 2026)                                              | Antigravity 2.0 (IDE, desktop app, CLI `agy`)              | v2.1.139 (11 May 2026)                                              |
+    | **Who decides it's done**       | The agent itself, via continuation prompts injected at the end of a turn  | The agent, in its plan → execute → verify → fix loop       | A separate evaluator model (Haiku), via a Stop hook                 |
+    | **Safeguard**                   | Configurable token budget                                                 | Build/test command on the last line of the prompt          | "…or stop after N turns", 1 goal per session, 4000 characters max   |
+    | **Periodic loop**               | — (via external plugins/scripts)                                          | `/schedule`                                                | `/loop <interval> <prompt>`                                         |
+    | **Preparation before the loop** | `GOAL.md` + `AGENTS.md` (community convention)                            | `/grill-me` to freeze the spec                             | `/plan` then `/goal`                                                |
+- fr: |-
+    | **`/learn` natif**            | Non                                      | Non                                                   | Non                                                             | Non                                                                          |
+    | **Mémoire persistante**       | `AGENTS.md`, rédigé à la main            | `CLAUDE.md` via `/init`, puis `/memory` pour l'éditer | Copilot Memory, automatique, piloté par `/memory on\|off\|show` | Knowledge Items, automatiques, plus des rules et workflows écrits à la main  |
+    | **Qui écrit l'apprentissage** | Vous, ou l'agent si vous le lui demandez | Vous, ou l'agent si vous le lui demandez              | L'agent, en continu                                             | Un sous-agent dédié, à la fin de chaque conversation                         |
+    | **Transformer en skill**      | Skills (`SKILL.md`)                      | Skills, plus un skill-creator                         | Skills dans `~/.copilot/skills/`                                | Skills dans `.agents/skills/` (projet) ou `~/.gemini/config/skills` (global) |
+    | **Gouvernance**               | Fichiers versionnés dans Git             | Fichiers versionnés dans Git                          | Paramètres repo et utilisateur côté GitHub                      | Dossier Knowledge local, consultable dans l'IDE                              |
+  en: |-
+    | **Native `/learn`**            | No                                       | No                                                    | No                                                              | No                                                                           |
+    | **Persistent memory**         | `AGENTS.md`, written by hand             | `CLAUDE.md` via `/init`, then `/memory` to edit it    | Copilot Memory, automatic, driven by `/memory on\|off\|show`    | Knowledge Items, automatic, plus hand-written rules and workflows            |
+    | **Who writes the learning**   | You, or the agent if you ask it          | You, or the agent if you ask it                       | The agent, continuously                                         | A dedicated sub-agent, at the end of each conversation                       |
+    | **Turn into a skill**         | Skills (`SKILL.md`)                      | Skills, plus a skill-creator                          | Skills in `~/.copilot/skills/`                                  | Skills in `.agents/skills/` (project) or `~/.gemini/config/skills` (global)  |
+    | **Governance**                | Files versioned in Git                   | Files versioned in Git                                | Repo and user settings on GitHub                                | Local Knowledge folder, browsable in the IDE                                 |
+- fr: |-
+    | **Lecteur**       | Un humain                                                     | Un agent IA                                                                                                    |
+    | **Déclenchement** | Quelqu'un décide de l'ouvrir et de le suivre                  | L'agent le charge lui-même quand la `description` du frontmatter correspond à la tâche, ou via `/nom-du-skill` |
+    | **Chargement**    | Lu en entier, une fois                                        | Progressif : seuls le nom et la description restent en contexte, le corps n'est chargé qu'au besoin            |
+    | **Contenu**       | Texte, checklists, captures d'écran                           | Instructions plus scripts, templates et fichiers de référence exécutables par l'agent                          |
+    | **Ton**           | Prescriptif, exhaustif, souvent pour l'audit et la conformité | Orienté décision, avec seulement ce que le modèle ne sait pas déjà                                             |
+    | **Exécution**     | L'humain agit                                                 | L'agent agit, éventuellement en lançant le script fourni                                                       |
+    | **Vérification**  | Signature, contrôle qualité                                   | Commande de test ou de build que l'agent peut lancer lui-même                                                  |
+  en: |-
+    | **Reader**        | A human                                                       | An AI agent                                                                                                    |
+    | **Trigger**       | Someone decides to open it and follow it                      | The agent loads it itself when the frontmatter `description` matches the task, or via `/skill-name`            |
+    | **Loading**       | Read in full, once                                            | Progressive: only the name and description stay in context, the body is loaded only when needed               |
+    | **Content**       | Text, checklists, screenshots                                 | Instructions plus scripts, templates and reference files the agent can run                                     |
+    | **Tone**          | Prescriptive, exhaustive, often for audit and compliance      | Decision-oriented, with only what the model doesn't already know                                               |
+    | **Execution**     | The human acts                                                | The agent acts, possibly by running the provided script                                                        |
+    | **Verification**  | Signature, quality control                                    | Test or build command the agent can run itself                                                                 |
+- fr: |-
+    | **Nature**          | Moteur de transformation déterministe (AST)             | Agent IA, utilisé en interactif ou en headless | Le même agent, piloté depuis du code                          |
+    | **Résultat**        | Identique à chaque exécution                            | Variable                                       | Variable                                                      |
+    | **Qui décide**      | La recette                                              | L'agent, guidé par vous                        | L'agent, encadré par votre code                               |
+    | **Idéal pour**      | Transformations mécaniques sur des milliers de fichiers | Travail ponctuel, exploration, petites boucles | Orchestration complexe et répétée                             |
+    | **Coût**            | Gratuit                                                 | Premium requests                               | Premium requests                                              |
+    | **Exemple Theseos** | `javax` → `jakarta`, renommage d'API du framework       | « Migre ce service et fais passer les tests »  | Migrer 80 modules en parallèle, avec rapport et PR par module |
+
+    ### **CLI headless**.
+
+    Souvent, oui. Le CLI en mode headless (`copilot -p "..."`) appelé depuis un script bash ou un job CI couvre déjà une grande partie des besoins :
+
+    ```bash
+    for m in $(cat modules.txt); do
+      git worktree add ../wt-$m
+      (cd ../wt-$m && copilot -p "Applique le skill refactor-theseos sur $m, puis mvn -pl $m test jusqu'au vert")
+    done
+    ```
+
+    Ça tient en dix lignes, c'est lisible par tout le monde et ça ne dépend d'aucune librairie en preview.
+
+    ### L'échelle à suivre
+
+    Il faut monter d'un cran seulement quand le cran inférieur ne suffit plus :
+
+    1. **OpenRewrite seul**, si la transformation est entièrement mécanique.
+    2. **CLI interactif avec un skill**, pour mettre au point le workflow à la main.
+    3. **CLI headless dans un script ou en CI**, pour le répéter. C'est souvent suffisant.
+    4. **SDK**, quand il faut de l'orchestration, du contrôle fin ou de l'intégration.
+  en: |-
+    | **Nature**          | Deterministic transformation engine (AST)               | AI agent, used interactively or headless       | The same agent, driven from code                              |
+    | **Result**          | Identical on every run                                  | Variable                                       | Variable                                                      |
+    | **Who decides**     | The recipe                                              | The agent, guided by you                       | The agent, framed by your code                                |
+    | **Best for**        | Mechanical transformations over thousands of files      | One-off work, exploration, small loops         | Complex, repeated orchestration                               |
+    | **Cost**            | Free                                                    | Premium requests                               | Premium requests                                              |
+    | **Theseos example** | `javax` → `jakarta`, framework API renaming             | "Migrate this service and make the tests pass" | Migrate 80 modules in parallel, with a report and PR per module |
+
+    ### **CLI headless**.
+
+    Often, yes. The CLI in headless mode (`copilot -p "..."`) called from a bash script or a CI job already covers a large part of the needs:
+
+    ```bash
+    for m in $(cat modules.txt); do
+      git worktree add ../wt-$m
+      (cd ../wt-$m && copilot -p "Apply the refactor-theseos skill to $m, then mvn -pl $m test until green")
+    done
+    ```
+
+    It fits in ten lines, everyone can read it, and it doesn't depend on any preview library.
+
+    ### The ladder to follow
+
+    Only move up one step when the step below is no longer enough:
+
+    1. **OpenRewrite alone**, if the transformation is fully mechanical.
+    2. **Interactive CLI with a skill**, to tune the workflow by hand.
+    3. **Headless CLI in a script or in CI**, to repeat it. Often enough.
+    4. **SDK**, when you need orchestration, fine control or integration.

@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  speakers: string;
+  when: string;
+  schedule?: string | null;
+  video?: string | null;
+  summary: string;
+}
+const { title, speakers, when, schedule, video, summary } = Astro.props;
+---
+<article class="missed-talk">
+  <span class="missed-talk__when">{when}</span>
+  <h3 class="missed-talk__title">{schedule ? <a href={schedule} target="_blank" rel="noopener">{title}</a> : title}</h3>
+  <span class="missed-talk__speakers">{speakers}</span>
+  <p class="missed-talk__summary">{summary}</p>
+  {video
+    ? <a class="video-button" href={video} target="_blank" rel="noopener">▶ Watch</a>
+    : <span class="badge">No video yet</span>}
+</article>

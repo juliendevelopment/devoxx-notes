@@ -1,0 +1,4 @@
+# English translation of the French passages of talks/Thu 02 - Coder, Coach, Catalyst/note.md.
+# sync.py replaces each `fr` block (exact text) by its `en` block.
+- fr: '- Back to Him and nd[?] external Factor out of contrôle'
+  en: '- Back to Him and nd[?] external Factor out of control'

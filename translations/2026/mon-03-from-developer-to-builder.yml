@@ -1,0 +1,4 @@
+# English translation of the French passages of talks/Mon 03 - From Developer to Builder/note.md.
+# sync.py replaces each `fr` block (exact text) by its `en` block.
+- fr: '- Nice But problème with out dated version'
+  en: '- Nice But problem with out dated version'

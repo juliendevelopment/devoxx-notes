@@ -1,0 +1,6 @@
+# English translation of the French passages of talks/Thu 01 - From Vibe Coding to Harness Engineering/note.md.
+# sync.py replaces each `fr` block (exact text) by its `en` block.
+- fr: '- Le type me dit qu''il y a 20 000 crédits par personne et qu''il pouvait aller jusqu''à 150 000 crédits. Au début ils ont explosé leur quota, même le quota de l''entreprise, et donc ils ont dû revoir ça pour améliorer leur token. Pour le vibe coding ils ont utilisé tout ce qui était Claude Code, curseur, etc. Et après, quand ils sont entrés dans la phase de production, là, ils ont utilisé des outils comme GitHub Copilot.'
+  en: '- The guy told me there are 20,000 credits per person and that it could go up to 150,000 credits. At the start they blew their quota, even the company quota, so they had to rework that to improve their token usage. For vibe coding they used everything like Claude Code, Cursor, etc. Then, when they entered the production phase, they used tools like GitHub Copilot.'
+- fr: '- Pour le partage des skills, etc., ils ne les mettaient pas sur le repo parce qu''ils ne pouvaient pas (ça, je ne sais pas trop pourquoi) et du coup ils se les partageaient entre eux manuellement.'
+  en: '- For sharing skills etc., they didn''t put them in the repo because they couldn''t (I don''t really know why), so they shared them with each other manually.'

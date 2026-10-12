@@ -1,0 +1,6 @@
+# English translation of the French passages of talks/Tue 03 - Responsibly Dimming the Lights/note.md.
+# sync.py replaces each `fr` block (exact text) by its `en` block.
+- fr: '- ⭐✅ Room 8 · Deep Dive · 210 favoris'
+  en: '- ⭐✅ Room 8 · Deep Dive · 210 favourites'
+- fr: '- Le workflow vers lequel convergent les équipes les plus avancées : alléger la code review du code généré sans créer de dette cognitive ni éroder les compétences, zone par zone. C''est une trajectoire de maturité réutilisable telle quelle dans un plan d''AI enablement. Rentea forme des équipes à l''agentic engineering.'
+  en: '- The workflow the most advanced teams converge on: lighten the code review of generated code without creating cognitive debt or eroding skills, area by area. It is a maturity path reusable as-is in an AI enablement plan. Rentea trains teams in agentic engineering.'

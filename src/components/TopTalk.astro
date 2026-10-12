@@ -1,0 +1,26 @@
+---
+import { href } from './link';
+
+interface Props {
+  href: string;
+  rank: number;
+  code: string;
+  title: string;
+  speakers: string;
+  why: string;
+  videoUrl?: string | null;
+}
+const { rank, code, title, speakers, why, videoUrl } = Astro.props;
+---
+<article class="top-talk">
+  <span class="top-talk__rank" aria-hidden="true">{rank}</span>
+  <div class="top-talk__body">
+    <span class="top-talk__code">{code} · {speakers}</span>
+    <h3 class="top-talk__title"><a href={href(Astro.props.href)}>{title}</a></h3>
+    <p class="top-talk__why">{why}</p>
+    <div class="top-talk__actions">
+      {videoUrl && <a class="video-button" href={videoUrl} target="_blank" rel="noopener">▶ Watch</a>}
+      <a class="top-talk__notes" href={href(Astro.props.href)}>My notes →</a>
+    </div>
+  </div>
+</article>

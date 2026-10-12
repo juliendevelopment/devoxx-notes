@@ -1,0 +1,6 @@
+# English translation of the French passages of talks/Tue 02 - Measuring the Unmeasurable/note.md.
+# sync.py replaces each `fr` block (exact text) by its `en` block.
+- fr: '- Room 8 · Lunch Talk · 81 favoris'
+  en: '- Room 8 · Lunch Talk · 81 favourites'
+- fr: '- Comment évaluer une IA générative : métriques, limites du LLM-as-a-judge, rôle de la revue humaine. Utile pour la question récurrente d''un AI lead : comment mesurer ce que l''IA apporte.'
+  en: '- How to evaluate a generative AI: metrics, limits of LLM-as-a-judge, the role of human review. Useful for an AI lead''s recurring question: how to measure what AI brings.'

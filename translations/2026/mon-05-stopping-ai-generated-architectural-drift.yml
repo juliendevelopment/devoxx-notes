@@ -1,0 +1,112 @@
+# English translation of the French passages of talks/Mon 05 - Stopping AI-Generated Architectural Drift/note.md.
+# sync.py replaces each `fr` block (exact text) by its `en` block.
+- fr: |-
+    Les deux font de l'analyse statique de code Java, mais ils ne travaillent ni au même moment, ni au même niveau, ni sur le même type de problème. Ils sont complémentaires.
+
+    ## ArchUnit : vérifier l'architecture
+
+    ArchUnit est une bibliothèque de tests. On écrit des règles d'architecture sous forme de tests JUnit, qui s'exécutent pendant la phase de test. Elle analyse le bytecode compilé (les `.class`) et construit un graphe de toutes les classes et de leurs dépendances. Elle a donc une vision globale de la codebase : qui dépend de qui, quels packages s'appellent entre eux, quelles annotations sont où.
+
+    Les questions typiques sont structurelles :
+
+    - « La couche service ne doit jamais appeler la couche web. »
+    - « Pas de cycles entre packages. »
+    - « Les classes annotées `@Stateless` doivent se trouver dans `..ejb..`. »
+    - « Personne n'utilise `java.util.Date` en dehors du module legacy. »
+
+    ```java
+    @ArchTest
+    static final ArchRule services_ne_dependent_pas_du_web =
+        noClasses().that().resideInAPackage("..service..")
+            .should().dependOnClassesThat().resideInAPackage("..web..");
+    ```
+
+    Un atout important pour un monolithe : le `FreezingArchRule`. Il enregistre les violations existantes comme une baseline et ne fait échouer le build que sur les nouvelles. On peut ainsi imposer une règle sur du legacy sans devoir tout corriger d'abord.
+
+    ## Error Prone : détecter des bugs dans le code
+
+    Error Prone, développé par Google, est un plugin du compilateur `javac`. Il s'exécute pendant la compilation et analyse l'AST (l'arbre syntaxique) de chaque fichier source. Sa vision est locale et fine : il regarde les expressions, les appels de méthode et les types précis, mais fichier par fichier, sans vue d'ensemble de l'architecture.
+
+    Les questions typiques portent sur des erreurs de programmation :
+
+    - `String.format` avec un nombre d'arguments qui ne colle pas au pattern ;
+    - valeur de retour ignorée (`str.trim();` tout seul) ;
+    - `equals` entre types incompatibles ;
+    - `switch` non exhaustif, mauvais usage d'`Optional`, problèmes de concurrence, etc.
+
+    ```java
+    String s = "abc";
+    s.replace("a", "b"); // Error Prone : ReturnValueIgnored → erreur de compilation
+    ```
+
+    Il propose souvent un correctif automatique (patch) et sert de socle à d'autres outils, comme NullAway pour la nullabilité. Écrire ses propres vérifications avec l'API `BugChecker` est possible, mais nettement plus complexe qu'une règle ArchUnit.
+
+    ## En résumé
+
+    ||ArchUnit|Error Prone|
+    |---|---|---|
+    |Nature|Bibliothèque de tests|Plugin du compilateur javac|
+    |Quand|Phase de test|Compilation|
+    |Analyse|Bytecode, graphe global|AST source, local par fichier|
+    |Cible|Règles d'architecture et conventions|Bugs et mauvais patterns de code|
+    |Règles custom|Faciles (DSL fluide en Java)|Possibles mais plus techniques|
+    |Legacy|Freeze / baseline natif|Désactivation par check ou suppression|
+
+    La règle simple : **ArchUnit répond à « est-ce que ce code est au bon endroit et respecte la structure voulue ? », Error Prone répond à « est-ce que ce code fait ce que le développeur croit ? »** Sur un monolithe Java EE, les deux ensemble couvrent bien le terrain.
+
+    Côté mise en place, ArchUnit est trivial à ajouter (une dépendance de test). Error Prone demande davantage de configuration du `maven-compiler-plugin`. Depuis le JDK 16, il faut aussi des flags `--add-exports` / `-J--add-opens`, et il faut vérifier la compatibilité entre la version d'Error Prone et celle du JDK.
+  en: |-
+    Both do static analysis of Java code, but they don't work at the same moment, at the same level, or on the same kind of problem. They are complementary.
+
+    ## ArchUnit: checking the architecture
+
+    ArchUnit is a test library. You write architecture rules as JUnit tests, which run during the test phase. It analyses the compiled bytecode (the `.class` files) and builds a graph of all classes and their dependencies. So it has a global view of the codebase: who depends on whom, which packages call each other, which annotations are where.
+
+    Typical questions are structural:
+
+    - "The service layer must never call the web layer."
+    - "No cycles between packages."
+    - "Classes annotated `@Stateless` must live in `..ejb..`."
+    - "Nobody uses `java.util.Date` outside the legacy module."
+
+    ```java
+    @ArchTest
+    static final ArchRule services_ne_dependent_pas_du_web =
+        noClasses().that().resideInAPackage("..service..")
+            .should().dependOnClassesThat().resideInAPackage("..web..");
+    ```
+
+    A big asset for a monolith: `FreezingArchRule`. It records the existing violations as a baseline and only fails the build on new ones. So you can enforce a rule on legacy code without fixing everything first.
+
+    ## Error Prone: finding bugs in the code
+
+    Error Prone, developed by Google, is a plugin for the `javac` compiler. It runs during compilation and analyses the AST (syntax tree) of each source file. Its view is local and fine-grained: it looks at expressions, method calls and precise types, but file by file, with no overall view of the architecture.
+
+    Typical questions are about programming mistakes:
+
+    - `String.format` with a number of arguments that doesn't match the pattern;
+    - ignored return value (`str.trim();` on its own);
+    - `equals` between incompatible types;
+    - non-exhaustive `switch`, misuse of `Optional`, concurrency problems, etc.
+
+    ```java
+    String s = "abc";
+    s.replace("a", "b"); // Error Prone: ReturnValueIgnored → compilation error
+    ```
+
+    It often suggests an automatic fix (patch) and is the base for other tools, like NullAway for nullability. Writing your own checks with the `BugChecker` API is possible, but much more complex than an ArchUnit rule.
+
+    ## In short
+
+    ||ArchUnit|Error Prone|
+    |---|---|---|
+    |Nature|Test library|javac compiler plugin|
+    |When|Test phase|Compilation|
+    |Analysis|Bytecode, global graph|Source AST, local per file|
+    |Target|Architecture rules and conventions|Bugs and bad code patterns|
+    |Custom rules|Easy (fluent Java DSL)|Possible but more technical|
+    |Legacy|Native freeze / baseline|Disable per check or suppression|
+
+    The simple rule: **ArchUnit answers "is this code in the right place and does it respect the intended structure?", Error Prone answers "does this code do what the developer thinks?"** On a Java EE monolith, the two together cover the ground well.
+
+    Setup-wise, ArchUnit is trivial to add (one test dependency). Error Prone needs more configuration of the `maven-compiler-plugin`. Since JDK 16 you also need `--add-exports` / `-J--add-opens` flags, and you must check the compatibility between the Error Prone version and the JDK version.
