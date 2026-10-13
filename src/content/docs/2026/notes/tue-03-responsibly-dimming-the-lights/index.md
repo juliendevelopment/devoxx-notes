@@ -14,12 +14,13 @@ Room 8 · Deep Dive · 13:30-16:30
 
 This talk shares how agentified engineering teams optimize code review for AI-generated code while avoiding cognitive debt and skill erosion. It outlines practical steps and milestones to progressively improve code quality, then safely reduce review intensity as confidence grows, gradually “dimming the lights” area by area.
 
+
+
 ## Key points ⭐
 
-- 1:03:00 learn abou calitim [?]
 - 1:09:00 Claude Scan his gitHub to see his tools he used on claude code
 - 1:49:00 invest on pluging market or SFPD cLI
-- 2:40:00 Refactoring, every post is important
+- 2:40:00 Refactoring and testing at the end , every post is important
 - 2:40:00 QA, Same as Refatoring
 
 ## Timeline
@@ -160,7 +161,7 @@ This talk shares how agentified engineering teams optimize code review for AI-ge
 ### [2:30:00](https://youtu.be/C10mZ3pCnGo?t=9000)
 - Sosial test
 
-### [2:38:47](https://youtu.be/C10mZ3pCnGo?t=9527)
+### [2:38:47](https://youtu.be/C10mZ3pCnGo?t=9527) ⭐
 ![](images/2h38m47.jpg)
 
 ### [2:40:00](https://youtu.be/C10mZ3pCnGo?t=9600) ⭐

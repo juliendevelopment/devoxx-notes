@@ -25,10 +25,10 @@ import { Steps } from '@astrojs/starlight/components';
 import Stats from '../../components/Stats.astro';
 import TopTalk from '../../components/TopTalk.astro';
 
-<Stats items={[{"value": 23, "label": "talks noted"}, {"value": 21, "label": "with video"}, {"value": 7, "label": "to share"}, {"value": 63, "label": "missed, to watch"}]} />
+<Stats items={[{"value": 23, "label": "talks noted"}, {"value": 21, "label": "with video"}, {"value": 6, "label": "to share"}, {"value": 63, "label": "missed, to watch"}]} />
 
 
-> **My view, as of 12 October 2026.** These are my personal takeaways, not a report. Some of it may be wrong, and some of it will age fast: I will update it.
+> **My view, as of 12 October 2026.** These are my personal takeaways, not a report. Some of it may be wrong, and some of it will age fast.
 
 ## How to read this site
 
@@ -49,9 +49,9 @@ Agentic, automated development moved forward a lot this year. Speakers now talk 
 
 Background reading: [The five levels, from spicy autocomplete to the software factory](https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/) (Dan Shapiro).
 
-### Developers are losing part of their identity…
+### Developers risk becoming "meat proxies"
 
-…but the shift goes towards the **functional side**: less pure technique, more of the product and the business. In my view, that brings us closer to the people we build for.
+When the agent writes the code and the developer only reviews it, the human becomes a *meat proxy*: a body that approves what the machine produced. That is a real loss of identity for developers. But the shift also goes towards the **functional side**: less pure technique, more of the product and the business. In my view, that brings us closer to the people we build for — as long as we keep the role of steering, not just reviewing.
 
 ### No revolution this year
 
@@ -59,7 +59,7 @@ There is a certain lack of novelty: no big new concept appeared. Models are stro
 
 ### Agentic features inside applications
 
-Adding agents *inside* our applications is a big trend too. Nothing very new for me either, but it keeps growing. An open question for us: at what point should development be involved in this?
+Adding agents *inside* our applications is a big trend too. Nothing very new, but it keeps growing. For now, at SFPD we only use agentic AI to *build* our software, not yet *inside* our applications.
 
 ## Invest in your harness
 
@@ -67,15 +67,15 @@ The harness is everything around the agent that helps it do correct work: **docu
 
 > Invest in your harness — your results will thank you.
 
-Own your harness: write your own skills instead of only consuming other people's.
+- **Own your harness**: write your own skills instead of only consuming other people's.
 
 ## My takeaways
 
-- **People don't write code anymore.** The job moves to specifying, steering and reviewing.
+- **Most of the code isn't written by hand anymore.** The job moves to specifying, steering and reviewing.
 - **Vibe coding is for pet projects.** Building something production-ready needs a harness.
 - **Review is about risk.** Review means identifying the risks and looking at what really matters, not reading every line.
-- **LLM as a judge** is a tool to keep in the box.
-- **Open question:** are loops really a thing if you already have a good harness?
+- **LLM as a judge** is worth having, with limits: it helps to write tests and to ease the review, but it doesn't replace a human decision on risk.
+- **Open question:** are loops really a thing? With a good harness (docs, tests, rules), the agent should get it right quickly, so the loop should stay small.
 
 ## Pitfalls
 
@@ -98,6 +98,9 @@ Own your harness: write your own skills instead of only consuming other people's
 ### Tools
 
 - **[RTK](https://www.rtk-ai.app/)**: cuts the tokens a coding agent spends on command output.
+- docker sandbox https://www.docker.com/products/docker-sandboxes/
+
+
 
 ### Spec-Driven Development frameworks
 
@@ -124,7 +127,6 @@ If you watch only a few recordings, watch these — in this order.
 <TopTalk {...{"href": "2026/notes/tue-01-loop-engineering", "code": "Tue 01", "slot": "09:30", "title": "Loop Engineering", "speakers": "Guillaume Laforge & Wietse Venema", "format": "Deep Dive", "video": true, "rank": 4, "why": "`/goal`, loops, the Ralph loop, and when to use OpenRewrite vs a headless CLI vs an SDK.", "videoUrl": "https://youtu.be/A7ZIf8LkSvE"}} />
 <TopTalk {...{"href": "2026/notes/mon-03-from-developer-to-builder", "code": "Mon 03", "slot": "13:30", "title": "From Developer to Builder", "speakers": "Simon Martinelli", "format": "Deep Dive", "video": true, "rank": 5, "why": "Spec-driven development with the AI Unified Process; turn guidelines into guardrails.", "videoUrl": "https://youtu.be/z8lal-Yt_04"}} />
 <TopTalk {...{"href": "2026/notes/mon-01-from-autocomplete-to-autopilot", "code": "Mon 01", "slot": "09:30", "title": "From Autocomplete to Autopilot", "speakers": "Tugdual Grall", "format": "Deep Dive", "video": true, "rank": 6, "why": "Copilot in practice: cost per user, hooks, and benchmarking your setup on every new model.", "videoUrl": "https://youtu.be/pMv_39iSXVA"}} />
-<TopTalk {...{"href": "2026/notes/wed-04-how-to-survive-and-thrive-as-a-dev", "code": "Wed 04", "slot": "15:10", "title": "How to survive and thrive as a dev (team)", "speakers": "Sander Hoogendoorn", "format": "Conference", "video": true, "rank": 7, "why": "Real adoption at iBOOD: micro-teams, foundations first, team knowledge turned into skills.", "videoUrl": "https://youtu.be/BLBwQpczk7M"}} />
 </div>
 
 ## Go further
